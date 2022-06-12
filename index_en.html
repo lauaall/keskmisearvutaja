@@ -1,0 +1,198 @@
+
+<!-- garbage code by me -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title id="display">Kesmise arvutaja</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta description="Free. Works in all browsers. Easy to use.">
+    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+</head>        
+<body onload="visit()">
+    <!-- drop down language selector with out form -->
+
+            <div class="lang"><a href="index.html">Estonian</a></div>
+            <div class="black">
+                <p id="text">Copy grades here</p>
+            </div> 
+            <textarea title="Write 'black here to change the color of the website" id="textfield" rows="5" cols="30">+1,-2,h,A,v,4/5,3*</textarea>
+            <div class="butt">
+                <button id="button">Calculate</button>  
+                <button id="button2">Clear</button> 
+                <button id="button3">Save grades</button>
+                <button id="button4">Load grades</button>
+                <button id="button5">Delete grades</button>
+                <p class="text2" id="text2"></p> 
+            </div>
+
+        
+
+</body>
+<script>
+const body = document.querySelector("body");
+body.style.color = "black";
+var visited = localStorage.getItem("visitTimes");
+function visit() {
+    localStorage.setItem("visitTimes", ++visited);
+    if (visited >=  100) {
+        document.getElementById("textfield").title = "Write 'snake' here to see the secret page";
+    }
+}
+
+
+
+const textfield = document.getElementById("textfield");
+// if darkmode is true
+if (localStorage.getItem("darkmode") == "true") {
+    const body = document.querySelector("body");
+        document.body.style.backgroundColor = "black";
+        // make the text black
+        document.getElementById("text").style.color = "white";
+        document.getElementById("text2").style.color = "white";
+        document.getElementById("textfield").style.color = "white";
+
+        // make the buttons border white
+        document.getElementById("button").style.borderColor = "white";
+        document.getElementById("button2").style.borderColor = "white";
+        document.getElementById("button3").style.borderColor = "white";
+        document.getElementById("button4").style.borderColor = "white";
+        document.getElementById("button5").style.borderColor = "white";
+        // make button background black
+        document.getElementById("button").style.backgroundColor = "black";
+        document.getElementById("button2").style.backgroundColor = "black";
+        document.getElementById("button3").style.backgroundColor = "black";
+        document.getElementById("button4").style.backgroundColor = "black";
+        document.getElementById("button5").style.backgroundColor = "black";
+        textfield.style.backgroundColor = "black";
+        // make button text white
+        document.getElementById("button").style.color = "white";
+        document.getElementById("button2").style.color = "white";
+        document.getElementById("button3").style.color = "white";
+        document.getElementById("button4").style.color = "white";
+        document.getElementById("button5").style.color = "white";
+        // change textfield title 
+        document.getElementById("textfield").title = "Type here 'back' to turn off darkmode";
+}
+
+const button = document.getElementById("button");
+const button2 = document.getElementById("button2");
+const button3 = document.getElementById("button3");
+const button4 = document.getElementById("button4");
+const button5 = document.getElementById("button5");
+const button6 = document.getElementById("button6");
+const text2 = document.getElementById("text2");
+
+
+// annoying buttons
+button2.addEventListener("click", function(){
+    textfield.value = "";
+    text2.innerHTML = "";
+    console.clear();
+    console.log("reset")
+});
+
+button3.addEventListener("click", function(){
+    localStorage.setItem("textfield", textfield.value);
+    const popup = document.createElement("div");
+        popup.classList.add("popup");
+        popup.innerHTML = "Saved to storage";
+        document.body.appendChild(popup);
+        setTimeout(function() {
+            popup.remove();
+        }, 3000);
+    console.log("saved")
+});
+
+button4.addEventListener("click", function(){
+    textfield.value = localStorage.getItem("textfield");
+    console.log("loaded")
+});
+
+button5.addEventListener("click", function(){
+    localStorage.removeItem("textfield");
+    console.log("removed")
+    const popup = document.createElement("div");
+        popup.classList.add("popup");
+        popup.innerHTML = "Deleted from storage";
+        document.body.appendChild(popup);
+        setTimeout(function() {
+            popup.remove();
+        }, 3000);
+});
+
+button.addEventListener("click", function() {
+    if (textfield.value == "back" || textfield.value == "Back"){
+        localStorage.setItem("darkmode", false)
+        location.reload();
+    }
+});
+
+    
+
+button.addEventListener("click", function() {
+        // make the page black
+        const body = document.querySelector("body");
+        if (textfield.value == "Black") {
+        document.body.style.backgroundColor = "black";
+        // make the text black
+        document.getElementById("text").style.color = "white";
+        document.getElementById("text2").style.color = "white";
+        document.getElementById("textfield").style.color = "white";
+
+        // make the buttons border white
+        document.getElementById("button").style.borderColor = "white";
+        document.getElementById("button2").style.borderColor = "white";
+        document.getElementById("button3").style.borderColor = "white";
+        document.getElementById("button4").style.borderColor = "white";
+        document.getElementById("button5").style.borderColor = "white";
+        // make button background black
+        document.getElementById("button").style.backgroundColor = "black";
+        document.getElementById("button2").style.backgroundColor = "black";
+        document.getElementById("button3").style.backgroundColor = "black";
+        document.getElementById("button4").style.backgroundColor = "black";
+        document.getElementById("button5").style.backgroundColor = "black";
+        textfield.style.backgroundColor = "black";
+        // make button text white
+        document.getElementById("button").style.color = "white";
+        document.getElementById("button2").style.color = "white";
+        document.getElementById("button3").style.color = "white";
+        document.getElementById("button4").style.color = "white";
+        document.getElementById("button5").style.color = "white";
+        // change textfield title 
+        document.getElementById("textfield").title = "Type 'back' to turn off darkmode";
+        localStorage.setItem("darkmode", true)
+}});
+
+
+button.addEventListener("click", function() {
+        // if text field value is snake start snake game
+        if (textfield.value == "snake") {
+        window.location.href = "snake.html";
+    }
+
+console.clear();
+var str = textfield.value;
+// no idea why this is here lol
+var remove = str.replace(/^\d+\,\d+\,/g, "");
+console.log(remove);
+var str2 = str.replace(/[^0-5]/g, '');
+console.log(str2);
+var arr = str2.split('');
+console.log(arr);
+var sum = arr.reduce((a, b) => parseInt(a) + parseInt(b));
+console.log(sum);
+var avg = sum / arr.length;
+console.log(avg);
+var rounded = Math.round(avg);
+var arrlen = arr.length;
+// if avg is already rounded dont add (-na ümardatud)
+if (rounded == avg) {
+    text2.innerHTML = "Average is " + avg;
+    console.log("didn't round")
+
+} else {
+    text2.innerHTML = "Average is " + avg + " \n(" + rounded + " if rounded)\n" + "\n(" + arrlen + " grades)";
+}});
+</script>
+</html>
