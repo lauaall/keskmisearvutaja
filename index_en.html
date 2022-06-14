@@ -40,11 +40,7 @@ function visit() {
     }
 }
 
-
-
-const textfield = document.getElementById("textfield");
-// if darkmode is true
-if (localStorage.getItem("darkmode") == "true") {
+function darkmode() {
     const body = document.querySelector("body");
         document.body.style.backgroundColor = "black";
         // make the text black
@@ -73,6 +69,12 @@ if (localStorage.getItem("darkmode") == "true") {
         document.getElementById("button5").style.color = "white";
         // change textfield title 
         document.getElementById("textfield").title = "Type here 'back' to turn off darkmode";
+}
+
+const textfield = document.getElementById("textfield");
+// if darkmode is true
+if (localStorage.getItem("darkmode") == "true") {
+    darkmode();
 }
 
 const button = document.getElementById("button");
@@ -131,38 +133,8 @@ button.addEventListener("click", function() {
     
 
 button.addEventListener("click", function() {
-        // make the page black
-        const body = document.querySelector("body");
-        if (textfield.value == "Black") {
-        document.body.style.backgroundColor = "black";
-        // make the text black
-        document.getElementById("text").style.color = "white";
-        document.getElementById("text2").style.color = "white";
-        document.getElementById("textfield").style.color = "white";
-
-        // make the buttons border white
-        document.getElementById("button").style.borderColor = "white";
-        document.getElementById("button2").style.borderColor = "white";
-        document.getElementById("button3").style.borderColor = "white";
-        document.getElementById("button4").style.borderColor = "white";
-        document.getElementById("button5").style.borderColor = "white";
-        // make button background black
-        document.getElementById("button").style.backgroundColor = "black";
-        document.getElementById("button2").style.backgroundColor = "black";
-        document.getElementById("button3").style.backgroundColor = "black";
-        document.getElementById("button4").style.backgroundColor = "black";
-        document.getElementById("button5").style.backgroundColor = "black";
-        textfield.style.backgroundColor = "black";
-        // make button text white
-        document.getElementById("button").style.color = "white";
-        document.getElementById("button2").style.color = "white";
-        document.getElementById("button3").style.color = "white";
-        document.getElementById("button4").style.color = "white";
-        document.getElementById("button5").style.color = "white";
-        // change textfield title 
-        document.getElementById("textfield").title = "Type 'back' to turn off darkmode";
-        localStorage.setItem("darkmode", true)
-}});
+    darkmode();
+});
 
 
 button.addEventListener("click", function() {
