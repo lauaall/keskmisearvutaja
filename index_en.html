@@ -40,7 +40,7 @@ function visit() {
     }
 }
 
-function darkmode() {
+function dark() {
     const body = document.querySelector("body");
         document.body.style.backgroundColor = "black";
         // make the text black
@@ -74,7 +74,7 @@ function darkmode() {
 const textfield = document.getElementById("textfield");
 // if darkmode is true
 if (localStorage.getItem("darkmode") == "true") {
-    darkmode();
+    dark();
 }
 
 const button = document.getElementById("button");
@@ -133,7 +133,9 @@ button.addEventListener("click", function() {
     
 
 button.addEventListener("click", function() {
-    darkmode();
+    if (textfield.value == "dark" || textfield.value == "Dark"){
+        dark();
+    }
 });
 
 
