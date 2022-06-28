@@ -1,23 +1,20 @@
-
-<!-- garbage code by me -->
+<!-- Copyright (c) 2022 Aleks Tõnnus -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <title id="display">Average grade calculator</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta description="Free. Works in all browsers. Easy to use.">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Stylesheet/style.css">
     <meta charset="utf-8">
 </head>        
 <body onload="visit()">
-    <!-- drop down language selector with out form -->
-
             <div class="lang"><a href="index.html">Estonian</a></div>
             <div class="black">
                 <p id="text">Copy grades here</p>
             </div> 
             <textarea title="Write 'black' here to change the color of the website" id="textfield" rows="5" cols="30">+1,-2,h,A,v,4/5,3*</textarea>
-            <div class="butt">
+            <div class="button">
                 <button id="button">Calculate</button>  
                 <button id="button2">Clear</button> 
                 <button id="button3">Save grades</button>
@@ -35,9 +32,6 @@ body.style.color = "black";
 var visited = localStorage.getItem("visitTimes");
 function visit() {
     localStorage.setItem("visitTimes", ++visited);
-    if (visited >=  100) {
-        document.getElementById("textfield").title = "Write 'snake' here to see the secret page";
-    }
 }
 
 function dark() {

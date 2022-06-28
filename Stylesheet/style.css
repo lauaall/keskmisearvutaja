@@ -1,4 +1,4 @@
-/* garbage code by me */
+
 body {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; 
     font-size: xx-large; 
@@ -14,10 +14,6 @@ a {
     color: blue;
 }
 
-.text2333 {
-    line-height: 1.1;
-}
-
 a:visited {
     color: blue;
 }
@@ -31,8 +27,11 @@ textarea {
     width: 1765px; height: 599px;
     font-weight: bold;
     outline: none; 
-    text-align: left;
-    
+    text-align: left; 
+    margin: 8px 0;
+    box-sizing: border-box;
+    font-size: x-large;
+    border: none;
 }
 
 /* changes textarea size only for phones */
@@ -44,8 +43,6 @@ textarea {
     .text2 {
         line-height: 1.2;
     }
-
-
 }
 
 
@@ -60,7 +57,7 @@ ul {
     list-style-type: square;
 }
 
-.butt {
+.button {
     text-align: center;
 }
 
@@ -93,4 +90,5 @@ button:active {
 .popup {
     color: black;
     background-color: red;
+    width: 100%;
 }

@@ -1,24 +1,22 @@
-
-<!-- garbage code by me -->
+<!-- Copyright (c) 2022 Aleks Tõnnus -->
 <!DOCTYPE html>
 <html lang="et">
 <head>
     <title id="display">Kesmise arvutaja</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta description="Tasuta. Töötab kõikides brauserites. Lihtne kasutada.">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Stylesheet/style.css">
     <meta charset="utf-8">
 </head>        
 <body onload="visit()">
         <span>
             <div class="lang"><a href="index_en.html">English</a></div>   
-            <div class="link"><a href="vaheaeg.html">vaheaeg</a></div>
         </span>
             <div class="black">
                 <p id="text" class="text">Kopeeri siia hinded</p>
             </div> 
             <textarea title="Kirjuta siia 'tume', et muuta leht tumedaks" id="textfield" rows="5" cols="30">+1,-2,h,A,v,4/5,3*</textarea>
-            <div class="butt">
+            <div class="button">
                 <button id="button">Arvuta</button>  
                 <button id="button2">Lähtesta</button> 
                 <button id="button3">Salvesta hinded</button>
@@ -37,9 +35,6 @@ body.style.color = "black";
 var visited = localStorage.getItem("visitTimes");
 function visit() {
     localStorage.setItem("visitTimes", ++visited);
-    if (visited >=  100) {
-        document.getElementById("textfield").title = "Kirjuta siia 'snake', et näha salajast lehte";
-    }
 }
 
 function dark() {
