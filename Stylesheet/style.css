@@ -32,7 +32,10 @@ textarea {
     box-sizing: border-box;
     font-size: x-large;
     border: none;
-    /* round corners*/
+    
+}
+
+textarea#textfield {
     border-radius: 10px;
 }
 
