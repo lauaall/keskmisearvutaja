@@ -32,6 +32,8 @@ textarea {
     box-sizing: border-box;
     font-size: x-large;
     border: none;
+    /* round corners*/
+    border-radius: 10px;
 }
 
 /* changes textarea size only for phones */
