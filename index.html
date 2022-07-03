@@ -9,24 +9,22 @@
     <meta charset="utf-8">
 </head>        
 <body onload="visit()">
-        <span>
-            <div class="lang"><a href="index_en.html">English</a></div>   
-        </span>
             <div class="black">
                 <p id="text" class="text">Kopeeri siia hinded</p>
             </div> 
             <textarea title="Kirjuta siia 'tume', et muuta leht tumedaks" id="textfield" rows="5" cols="30">+1,-2,h,A,v,4/5,3*</textarea>
+            <div class="added"><p id="text2" class="text2">⠀</p></div>
             <div class="button">
                 <button id="button">Arvuta</button>  
-                <button id="button2">Lähtesta</button> 
-                <button id="button3">Salvesta hinded</button>
-                <button id="button4">Lae hinded</button>
-                <button id="button5">Kustuta hinded</button>
+                <button id="button2">Lähtesta</button>
+                <br></br>
+            <div class="emojibuttons">
+                <div title="Salvestab hinded arvutile."class="save"><button id="button3"><img alt="save"src="icons/save.png"></button></div>
+                <div title="Laeb salvestatud hinded."class="load"><button  id="button4"><img alt="load"src="icons/load.png"></button></div>
+                <div title="Kustutab salvestatud hinded arvutilt."class="delete"><button  id="button5"><img alt="delete"src="icons/delete.png"></button></div>
+            </div>
+                
             </div>    
-                <div class="added"><p id="text2" class="text2"></p></div>
-            
-
-        
 
 </body>
 <script>
@@ -146,22 +144,15 @@ console.clear();
 var str = textfield.value;
 // no idea why this is here lol
 var remove = str.replace(/^\d+\,\d+\,/g, "");
-console.log(remove);
 var str2 = str.replace(/[^0-5]/g, '');
-console.log(str2);
 var arr = str2.split('');
-console.log(arr);
 var sum = arr.reduce((a, b) => parseInt(a) + parseInt(b));
-console.log(sum);
 var avg = sum / arr.length;
-console.log(avg);
 var rounded = Math.round(avg);
 var arrlen = arr.length;
 // if avg is already rounded dont add (-na ümardatud)
 if (rounded == avg) {
     text2.innerHTML = "Keskmine on " + avg;
-    console.log("didn't round")
-
 } else {
     text2.innerHTML = "Keskmine on " + avg + " \n(" + rounded + "-na ümardatud)\n" + "\n (" + arrlen + " hinnet)";
 }});

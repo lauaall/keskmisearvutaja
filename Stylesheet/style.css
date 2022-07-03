@@ -24,10 +24,10 @@ a:visited {
 
 textarea {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; 
-    width: 1765px; height: 599px;
+    width: 1000px; height: 599px;
     font-weight: bold;
     outline: none; 
-    text-align: left; 
+    text-align: center; 
     margin: 8px 0;
     box-sizing: border-box;
     font-size: x-large;
@@ -50,23 +50,35 @@ textarea#textfield {
     }
 }
 
+.save {
+    background-image: 75%;
+    display: inline-block;
+}
 
+.delete {
+    background-image: 75%;
+    display: inline-block;
+}
+
+.load {
+    background-image: 75%;
+    display: inline-block;
+}
 p {
     text-align: center;
     line-height: 20px;
-}
-
-ul {
-    text-align: center;
-    line-height: 0.8;
-    list-style-type: square;
 }
 
 .button {
     text-align: center;
 }
 
+.emojibuttons {
+    padding: 5px;
+}
+
 button {
+    margin-right: 10px;
     text-align: center;
     font-weight: bold;
     padding: 15px;
@@ -79,12 +91,15 @@ button {
     border: 3px solid black;
     outline: none;
     box-shadow: 0 4px #999;
+    margin-left: 5px;
 }
 
 button:hover {
     background-color: rgb(252, 159, 39);
     transition: 0.8;
 }
+
+
 
 button:active {
   background-color: rgb(253, 167, 54);
@@ -95,5 +110,6 @@ button:active {
 .popup {
     color: black;
     background-color: red;
-    width: 100%;
+    width: 20%;
+    margin-top: 7px;
 }
