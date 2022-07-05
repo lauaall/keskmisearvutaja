@@ -18,10 +18,6 @@ a:visited {
     color: blue;
 }
 
-#display {
-    line-height: 1.2;
-}
-
 textarea {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; 
     width: 1890px;
@@ -51,20 +47,6 @@ textarea#textfield {
     }
 }
 
-.save {
-    background-image: 75%;
-    display: inline-block;
-}
-
-.delete {
-    background-image: 75%;
-    display: inline-block;
-}
-
-.load {
-    background-image: 75%;
-    display: inline-block;
-}
 p {
     text-align: center;
     line-height: 20px;
@@ -72,10 +54,6 @@ p {
 
 .button {
     text-align: center;
-}
-
-.emojibuttons {
-    padding: 5px;
 }
 
 button {
@@ -99,8 +77,6 @@ button:hover {
     background-color: rgb(252, 159, 39);
     transition: 0.8;
 }
-
-
 
 button:active {
   background-color: rgb(253, 167, 54);
