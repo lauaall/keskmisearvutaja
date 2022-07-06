@@ -13,7 +13,7 @@
                 <p id="text" class="text">Kopeeri siia hinded</p>
             </div> 
             <textarea title="Kirjuta siia 'tume', et muuta leht tumedaks" id="textfield" rows="5" cols="30">+1,-2,h,A,v,4/5,3*</textarea>
-            <div class="added"><p id="text2" class="text2">⠀</p></div>
+            <div class="added"><p id="text2" class="text2">Vajuta "Arvuta", et arvutada Keskmine.</p></div>
             <div class="button">
                 <button id="button">Arvuta</button>  
                 <button id="button2">Kustuta</button>
@@ -67,10 +67,6 @@ if (localStorage.getItem("darkmode") == "true") {
 
 const button = document.getElementById("button");
 const button2 = document.getElementById("button2");
-const button3 = document.getElementById("button3");
-const button4 = document.getElementById("button4");
-const button5 = document.getElementById("button5");
-const button6 = document.getElementById("button6");
 const text2 = document.getElementById("text2");
 
 
@@ -80,35 +76,6 @@ button2.addEventListener("click", function(){
     text2.innerHTML = "";
     console.clear();
     console.log("reset")
-});
-
-button3.addEventListener("click", function(){
-    localStorage.setItem("textfield", textfield.value);
-    console.log("saved")
-    const popup = document.createElement("div");
-        popup.classList.add("popup");
-        popup.innerHTML = "Salvestatud";
-        document.body.appendChild(popup);
-        setTimeout(function() {
-            popup.remove();
-        }, 3000);
-});
-
-button4.addEventListener("click", function(){
-    textfield.value = localStorage.getItem("textfield");
-    console.log("loaded")
-});
-
-button5.addEventListener("click", function(){
-    localStorage.removeItem("textfield");
-    console.log("removed")
-    const popup = document.createElement("div");
-        popup.classList.add("popup");
-        popup.innerHTML = "Kustutatud";
-        document.body.appendChild(popup);
-        setTimeout(function() {
-            popup.remove();
-        }, 3000);
 });
 
 button.addEventListener("click", function() {
@@ -133,6 +100,7 @@ button.addEventListener("click", function() {
         if (textfield.value == "snake") {
         window.location.href = "snake.html";
     }
+
 console.clear();
 var str = textfield.value;
 // no idea why this is here lol
