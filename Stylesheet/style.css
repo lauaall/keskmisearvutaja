@@ -18,6 +18,10 @@ a:visited {
     color: blue;
 }
 
+.text2 {
+    padding: 0px;
+}
+
 textarea {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; 
     width: 1890px;
@@ -46,6 +50,14 @@ textarea#textfield {
     }
 }
 
+@media only screen and (max-height: 575.98px) and (orientation: landscape) {
+    textarea {
+        width: 641px; height: 172px;
+    }    
+    p {
+        line-height: 0.9;
+    }
+}
 p {
     text-align: center;
     line-height: 20px;
