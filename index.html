@@ -9,14 +9,11 @@
     <meta charset="utf-8">
 </head>        
 <body onload="visit()">
-            <div class="black">
-                <p id="text" class="text">Kopeeri siia hinded</p>
-            </div> 
-            <textarea title="Kirjuta siia 'tume', et muuta leht tumedaks" id="textfield" rows="5" cols="30">+1,-2,h,A,v,4/5,3*</textarea>
-            <div class="added"><p id="text2" class="text2">Vajuta "Arvuta", et arvutada Keskmine.</p></div>
+            <p id="text" class="text">Keskmise arvutaja</p>
+            <textarea oninput="arvuta()" title="´" id="textfield" rows="5" cols="30">+1,-2,h,A,v,4/5,3*</textarea>
+            <div class="added"><p id="text2" class="text2">Kopeeri numbreid kasti, et arvutada Keskmine.</p></div>
             <div class="button">
-                <button id="button">Arvuta</button>  
-                <button id="button2">Kustuta</button>
+                <button id="button2" title="Vajuta siia, et kustutada kastis olevad numbrid!">Kustuta</button>
             </div>    
 
 </body>
@@ -28,94 +25,28 @@ function visit() {
     localStorage.setItem("visitTimes", ++visited);
 }
 
-function dark() {
-        
-    document.body.style.backgroundColor = "black";
-        // make the text black
-        document.getElementById("text").style.color = "white";
-        document.getElementById("text2").style.color = "white";
-        document.getElementById("textfield").style.color = "white";
-
-        // make the buttons border white
-        document.getElementById("button").style.borderColor = "white";
-        document.getElementById("button2").style.borderColor = "white";
-        document.getElementById("button3").style.borderColor = "white";
-        document.getElementById("button4").style.borderColor = "white";
-        document.getElementById("button5").style.borderColor = "white";
-        // make button background black
-        document.getElementById("button").style.backgroundColor = "black";
-        document.getElementById("button2").style.backgroundColor = "black";
-        document.getElementById("button3").style.backgroundColor = "black";
-        document.getElementById("button4").style.backgroundColor = "black";
-        document.getElementById("button5").style.backgroundColor = "black";
-        textfield.style.backgroundColor = "black";
-        // make button text white
-        document.getElementById("button").style.color = "white";
-        document.getElementById("button2").style.color = "white";
-        document.getElementById("button3").style.color = "white";
-        document.getElementById("button4").style.color = "white";
-        document.getElementById("button5").style.color = "white";
-        // change textfield title 
-        document.getElementById("textfield").title = "Kirjuta siia 'tagasi', et minna tagasi oranzile";
-}
+function arvuta() {
+    var str = textfield.value;
+    var remove = str.replace(/^\d+\,\d+\,/g, "");
+    var str2 = str.replace(/[^0-5]/g, '');
+    var arr = str2.split('');
+    var sum = arr.reduce((a, b) => parseInt(a) + parseInt(b));
+    var avg = sum / arr.length;
+    var rounded = Math.round(avg);
+    var arrlen = arr.length;
+    if (rounded == avg) {
+        text2.innerHTML = "Keskmine on " + avg;
+    } else {
+        text2.innerHTML = "Keskmine on " + avg + " \n(" + rounded + "-na ümardatud)\n" + "\n (" + arrlen + " hinnet)";
+}}
 
 const textfield = document.getElementById("textfield");
-// if darkmode is true
-if (localStorage.getItem("darkmode") == "true") {
-    dark();
-}
-
 const button = document.getElementById("button");
 const button2 = document.getElementById("button2");
 const text2 = document.getElementById("text2");
 
-
-// annoying buttons
 button2.addEventListener("click", function(){
     textfield.value = "";
-    text2.innerHTML = "";
-    console.clear();
-    console.log("reset")
 });
-
-button.addEventListener("click", function() {
-    if (textfield.value == "tagasi" || textfield.value == "Tagasi"){
-        localStorage.setItem("darkmode", false)
-        location.reload();
-    }
-});
-
-    
-
-button.addEventListener("click", function() {
-    if (textfield.value == "tume" || textfield.value == "Tume"){
-        localStorage.setItem("darkmode", true)
-            dark();
-    }
-});
-
-
-button.addEventListener("click", function() {
-        // if text field value is snake start snake game
-        if (textfield.value == "snake") {
-        window.location.href = "snake.html";
-    }
-
-console.clear();
-var str = textfield.value;
-// no idea why this is here lol
-var remove = str.replace(/^\d+\,\d+\,/g, "");
-var str2 = str.replace(/[^0-5]/g, '');
-var arr = str2.split('');
-var sum = arr.reduce((a, b) => parseInt(a) + parseInt(b));
-var avg = sum / arr.length;
-var rounded = Math.round(avg);
-var arrlen = arr.length;
-// if avg is already rounded dont add (-na ümardatud)
-if (rounded == avg) {
-    text2.innerHTML = "Keskmine on " + avg;
-} else {
-    text2.innerHTML = "Keskmine on " + avg + " \n(" + rounded + "-na ümardatud)\n" + "\n (" + arrlen + " hinnet)";
-}});
 </script>
 </html>
