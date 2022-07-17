@@ -10,16 +10,24 @@
 </head>        
 <body onload="visit()">
             <p id="text" class="text">Keskmise arvutaja</p>
-            <textarea oninput="arvuta()" title="´" id="textfield" rows="5" cols="30">+1,-2,h,A,v,4/5,3*</textarea>
-            <div class="added"><p id="text2" class="text2">Kopeeri numbreid kasti, et arvutada Keskmine.</p></div>
+            <textarea oninput="arvuta()" title="" id="textfield" rows="5" cols="30">+1,-2,h,A,v,4/5,3*</textarea>
+            <div class="added"><p id="text2" class="text2">Kopeeri numbreid kasti, et arvutada Keskmine või vajuta "Arvuta".</p></div>
             <div class="button">
+                <button onclick="arvuta()" id="button" class="button">Arvuta</button>
                 <button id="button2" title="Vajuta siia, et kustutada kastis olevad numbrid!">Kustuta</button>
+                <button onclick="copyToClipboard()">Kopeeri Keskmine</button>
+                <p id="invis" class="invis"></p>
             </div>    
 
 </body>
 <script>
+const textfield = document.getElementById("textfield");
+const button = document.getElementById("button");
+const button2 = document.getElementById("button2");
+const text2 = document.getElementById("text2");
 const body = document.querySelector("body");
 body.style.color = "black";
+
 var visited = localStorage.getItem("visitTimes");
 function visit() {
     localStorage.setItem("visitTimes", ++visited);
@@ -32,18 +40,32 @@ function arvuta() {
     var arr = str2.split('');
     var sum = arr.reduce((a, b) => parseInt(a) + parseInt(b));
     var avg = sum / arr.length;
-    var rounded = Math.round(avg);
+    var rounded = avg.toFixed(2)
+    
     var arrlen = arr.length;
     if (rounded == avg) {
-        text2.innerHTML = "Keskmine on " + avg;
+        text2.innerHTML = "Keskmine on " + avg + " (" + arrlen + " hinnet)";
+        document.getElementById("invis").innerHTML = rounded;
     } else {
-        text2.innerHTML = "Keskmine on " + avg + " \n(" + rounded + "-na ümardatud)\n" + "\n (" + arrlen + " hinnet)";
+        text2.innerHTML = "Keskmine on " + avg.toFixed(2) + "\n (" + arrlen + " hinnet)";
+        document.getElementById("invis").innerHTML = rounded;
 }}
 
-const textfield = document.getElementById("textfield");
-const button = document.getElementById("button");
-const button2 = document.getElementById("button2");
-const text2 = document.getElementById("text2");
+function copyToClipboard() {
+    var range = document.createRange();
+        range.selectNode(document.getElementById("invis"));
+        window.getSelection().addRange(range);
+        document.execCommand('copy');
+        window.getSelection().removeAllRanges();
+
+        const popup = document.createElement("div");
+        popup.classList.add("popup");
+        popup.innerHTML = "Copied to clipboard";
+        document.body.appendChild(popup);
+        setTimeout(function() {
+            popup.remove();
+        }, 3000);
+}
 
 button2.addEventListener("click", function(){
     textfield.value = "";
