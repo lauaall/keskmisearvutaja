@@ -55,12 +55,13 @@ p {
     line-height: 20px;
 }
 
-.button {
+ 
+
+ .button {
     text-align: center;
 }
 
 button {
-    margin-right: 10px;
     text-align: center;
     font-weight: bold;
     padding: 15px;
@@ -69,24 +70,25 @@ button {
     line-height: 1.0;
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     font-size: xx-large;
-    border-radius: 16px;
+    border-radius: 10px;
     border: 3px solid black;
     outline: none;
     box-shadow: 0 4px #999;
-    margin-left: 5px;
+    
 }
 
 button:hover {
     background-color: rgb(252, 159, 39);
-    transition: 0.8;
+    -webkit-transition: all 0.1s ease-in-out;
+    transition: 0.3;
 }
 
 button:active {
   background-color: rgb(253, 167, 54);
-  box-shadow: 0 5px #666;
+  box-shadow: 0 3px #666;
   transform: translateY(4px);
-}
-
+} 
+*/
 .added {
     font-size: 28px;
 }

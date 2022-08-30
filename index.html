@@ -57,14 +57,6 @@ function copyToClipboard() {
         window.getSelection().addRange(range);
         document.execCommand('copy');
         window.getSelection().removeAllRanges();
-
-        const popup = document.createElement("div");
-        popup.classList.add("popup");
-        popup.innerHTML = "Copied to clipboard";
-        document.body.appendChild(popup);
-        setTimeout(function() {
-            popup.remove();
-        }, 3000);
 }
 
 button2.addEventListener("click", function(){
