@@ -10,12 +10,11 @@
 </head>        
 <body onload="visit()">
             <p id="text" class="text">Keskmise arvutaja</p>
-            <textarea oninput="arvuta()" title="" id="textfield" rows="5" cols="30">+1,-2,h,A,v,4/5,3*</textarea>
+            <textarea oninput="arvuta()" id="textfield" rows="5" cols="30">+1,-2,h,A,v,4/5,3*</textarea>
             <div class="added"><p id="text2" class="text2">Kopeeri numbreid kasti, et arvutada Keskmine või vajuta "Arvuta".</p></div>
             <div class="button">
                 <button onclick="arvuta()" id="button" class="button">Arvuta</button>
                 <button id="button2" title="Vajuta siia, et kustutada kastis olevad numbrid!">Kustuta</button>
-                <button onclick="copyToClipboard()">Kopeeri Keskmine</button>
                 <p id="invis" class="invis"></p>
             </div>    
 
@@ -50,14 +49,6 @@ function arvuta() {
         text2.innerHTML = "Keskmine on " + avg.toFixed(2) + "\n (" + arrlen + " hinnet)";
         document.getElementById("invis").innerHTML = rounded;
 }}
-
-function copyToClipboard() {
-    var range = document.createRange();
-        range.selectNode(document.getElementById("invis"));
-        window.getSelection().addRange(range);
-        document.execCommand('copy');
-        window.getSelection().removeAllRanges();
-}
 
 button2.addEventListener("click", function(){
     textfield.value = "";
