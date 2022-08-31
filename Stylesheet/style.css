@@ -10,21 +10,26 @@ body {
 
 }
 
+.text {
+    margin: 1rem;
+}
+
 .text2 {
     padding: 0px;
 }
 
 textarea {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; 
-    width: 1890px;
-    height: 393px;
+    /* width: 1890px;
+    height: 393px; */
+    width: 100%;
+    height: 15rem;
     font-weight: bold;
     outline: none; 
     margin: 8px 0;
     box-sizing: border-box;
     font-size: x-large;
     border: none;
-    
 }
 
 textarea#textfield {
@@ -35,6 +40,10 @@ textarea#textfield {
 @media only screen and (max-width: 480px) {
     textarea {
         width: 100%; height: 172px;
+    }
+
+    .button {
+        margin-bottom: 1rem;
     }
 
     .text2 {
@@ -52,7 +61,6 @@ textarea#textfield {
 }
 p {
     text-align: center;
-    line-height: 20px;
 }
 
  
@@ -88,10 +96,6 @@ button:active {
   box-shadow: 0 3px #666;
   transform: translateY(4px);
 } 
-*/
-.added {
-    font-size: 28px;
-}
 
 .invis {
     color: rgb(255, 162, 48);
