@@ -42,6 +42,11 @@ textarea#textfield {
         width: 100%; height: 172px;
     }
 
+    button:active {
+        -webkit-transform: translateY(4px);
+        -webkit-box-shadow: inset 0 3px #666;
+    }
+
     .button {
         margin-bottom: 1rem;
     }
@@ -50,7 +55,7 @@ textarea#textfield {
         line-height: 1.2;
     }
 }
-
+ /*landscape mode*/
 @media only screen and (max-height: 575.98px) and (orientation: landscape) {
     textarea {
         width: 100%; height: 172px;
