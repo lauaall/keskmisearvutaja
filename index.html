@@ -7,16 +7,16 @@
     <meta name="description" content="Tasuta. Töötab kõikides brauserites. Lihtne kasutada.">
     <link rel="stylesheet" href="Stylesheet/style.css">
     <meta charset="utf-8">
+    <link href='https://fonts.googleapis.com/css?family=Work Sans' rel='stylesheet'>
     <link rel="icon" type="image/png" sizes="32x32" href="Stylesheet/favicon-32x32.png">
 </head>        
 <body onload="visit()">
             <p id="text" class="text">Keskmise arvutaja</p>
             <textarea oninput="arvuta()" id="textfield" rows="5" cols="30">+1,-2,h,A,v,4/5,3*</textarea>
-            <div class="added"><p id="text2" class="text2">Kopeeri numbreid kasti, et arvutada Keskmine või vajuta "Arvuta".</p></div>
+            <div><p id="text2" class="text2">Kopeeri numbreid kasti, et arvutada Keskmine või vajuta "Arvuta".</p></div>
             <div class="button">
                 <button onclick="arvuta()" id="button" class="button">Arvuta</button>
                 <button id="button2" title="Vajuta siia, et kustutada kastis olevad numbrid!">Kustuta</button>
-                <p id="invis" class="invis"></p>
             </div>    
 
 </body>
@@ -45,10 +45,8 @@ function arvuta() {
     var arrlen = arr.length;
     if (rounded == avg) {
         text2.innerHTML = "Keskmine on " + avg + " (" + arrlen + " hinnet)";
-        document.getElementById("invis").innerHTML = rounded;
     } else {
         text2.innerHTML = "Keskmine on " + avg.toFixed(2) + "\n (" + arrlen + " hinnet)";
-        document.getElementById("invis").innerHTML = rounded;
 }}
 
 button2.addEventListener("click", function(){
