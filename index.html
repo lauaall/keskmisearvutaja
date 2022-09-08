@@ -47,9 +47,11 @@ function arvuta() {
     // if pressed is false and rounded = 5.00, then confetti
     if (pressed == false && rounded == 5.00) {
         confetti({
-            particleCount: 150,
+            particleCount: 200,
             spread: 70,
-            origin: { y: 0.3 }
+            ticks: 300,
+            origin: { y: 0.4 }
+            
         });
         pressed = true;
     }
