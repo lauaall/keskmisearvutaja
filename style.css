@@ -5,10 +5,7 @@ body {
     color: black;
     font-weight: normal;
     gap: 250px;
-    background: rgb(255,162,48);
-    background: linear-gradient(90deg, rgba(255,162,48,1) 22%, rgba(255,79,116,1) 81%);
-    background-size: cover;
-    background-attachment: fixed;
+    background-image: linear-gradient(90deg, rgb(255, 162, 48) 22%, rgb(255, 79, 116) 82%);
     line-height: 1.0;
 
 }
