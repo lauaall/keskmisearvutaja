@@ -7,7 +7,7 @@ body {
     gap: 250px;
     background: rgb(255,162,48);
     background: linear-gradient(90deg, rgba(255,162,48,1) 22%, rgba(255,79,116,1) 81%);
-    background-attachment: scroll;
+    background-repeat: repeat;
     line-height: 1.0;
 
 }
