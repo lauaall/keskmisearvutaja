@@ -8,9 +8,10 @@
     <link rel="stylesheet" href="Stylesheet/style.css">
     <meta charset="utf-8">
     <link href='https://fonts.googleapis.com/css?family=Work Sans' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     <link rel="icon" type="image/png" sizes="32x32" href="Stylesheet/favicon-32x32.png">
 </head>        
-<body onload="visit()" onload="arvuta()">
+<body onload="visit()">
             <p id="text" class="text">Keskmise arvutaja</p>
             <label for="textbox"><textarea oninput="arvuta()" id="textfield" rows="5" cols="30">+1,-2,h,A,v,4/5,3*</textarea></label>
             <div><p id="text2" class="text2"><b>Vajuta "Arvuta"</b></p></div>
@@ -21,6 +22,7 @@
 
 </body>
 <script>
+var pressed = false;
 const textfield = document.getElementById("textfield");
 const button = document.getElementById("button");
 const button2 = document.getElementById("button2");
@@ -34,6 +36,7 @@ function visit() {
 }
 
 function arvuta() {
+    
     var str = textfield.value;
     var remove = str.replace(/^\d+\,\d+\,/g, "");
     var str2 = str.replace(/[^0-5]/g, '');
@@ -41,16 +44,28 @@ function arvuta() {
     var sum = arr.reduce((a, b) => parseInt(a) + parseInt(b));
     var avg = sum / arr.length;
     var rounded = avg.toFixed(2)
-    
+    // if pressed is false and rounded = 5.00, then confetti
+    if (pressed == false && rounded == 5.00) {
+        confetti({
+            particleCount: 150,
+            spread: 70,
+            origin: { y: 0.3 }
+        });
+        pressed = true;
+    }
+
     var arrlen = arr.length;
-    if (rounded == avg) {
-        text2.innerHTML = "Keskmine on " + avg + " (" + arrlen + " hinnet)";
+    if (arr.lenght == 1) {
+        text2.innerHTML = "Keskmine on " + avg.toFixed(2).bold() + " (" + arrlen + " hinne)";
     } else {
-        text2.innerHTML = "Keskmine on " + avg.toFixed(2) + "\n (" + arrlen + " hinnet)";
+        text2.innerHTML = "Keskmine on " + avg.toFixed(2).bold() + "\n (" + arrlen + " hinnet)";
 }}
 
 button2.addEventListener("click", function(){
     textfield.value = "";
+    pressed = false;
 });
+
+
 </script>
 </html>
