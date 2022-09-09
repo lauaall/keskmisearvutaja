@@ -45,7 +45,7 @@ function arvuta() {
     var avg = sum / arr.length;
     var rounded = avg.toFixed(2)
     // if pressed is false and rounded = 5.00, then confetti
-    if (pressed == false && rounded == 5.00) {
+    if (pressed == false && rounded >= 4.50) {
         confetti({
             particleCount: 200,
             spread: 70,
