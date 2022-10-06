@@ -87,7 +87,7 @@ button {
     text-align: center;
     font-weight: thin;
     padding: 15px;
-    background: rgb(247, 140, 0);
+    background: linear-gradient(90deg, rgb(255 120 75) 15%, rgb(218 142 48) 68%);
     cursor: pointer;
     line-height: 1.0;
     font-family: "Work Sans", Arial, Helvetica, sans-serif;
