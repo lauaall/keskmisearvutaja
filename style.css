@@ -36,7 +36,7 @@ textarea {
     outline: none; 
     margin: 8px 0;
     background-color: #353541e8;
-    box-shadow:  0 0 15px rgba(0,0,0,.1);
+    box-shadow:  0 0 15px rgba(0,0,0,.2);
     box-sizing: border-box;
     font-size: x-large;
     border: none;
