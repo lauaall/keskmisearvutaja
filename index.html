@@ -38,7 +38,9 @@ var visited = localStorage.getItem("visitTimes");
 function visit() {
     localStorage.setItem("visitTimes", ++visited);
 }
-
+switcher.addEventListener("change", function() {
+    arvuta();
+});
 
 
 
