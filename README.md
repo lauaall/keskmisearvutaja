@@ -1,2 +1,2 @@
 # keskmisearuvtaja
-https://skelq.github.io/keskmisearvutaja/
+https://lauaall.github.io/keskmisearvutaja/
