@@ -12,9 +12,72 @@ body {
 
 }
 
+#textfield::placeholder {
+    font-style: italic;
+}
+
+.x2 {
+    display: inline-block;
+}
 .x1 {
     display: inline-block;
 }
+
+/* css for the 2 toggle slider */
+.switch2 {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  .switch2 input {
+    display: none;
+  }
+  
+  .slider2 {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #cccccc;
+    transition: .4s;
+    border-radius: 34px;
+  }
+  
+  .slider2:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: rgb(255, 255, 255);
+    transition: .4s;
+    border-radius: 50%;
+  }
+  
+  input:checked + .slider2 {
+    background-color: #5c6091;
+  }
+  
+  input:checked + .slider2:before {
+    transform: translateX(26px);
+  }
+  
+  .slider2.round {
+    border-radius: 34px;
+  }
+  
+  .slider2.round:before {
+    border-radius: 50%;
+  }
+
+
+
+
 /* css for the toggle slider */
 .switch {
     position: relative;
