@@ -20,10 +20,10 @@
               </div><div class="x1"><p>,et x võrduks 1</p></div>
               <br>
               
-              <div class="switch2">
+              <!-- <div class="switch">
                 <input type="checkbox" id="switch2" name="theme" />
                 <label for="switch2" class="slider round2"></label>
-              </div><div class="x2"><p>,et hinne oleks (A-F)</p></div>
+              </div><div class="x2"><p>,et hinne oleks (A-F)</p></div> -->
               
             
             <label for="textbox"><textarea style="resize: none;" oninput="arvuta()" placeholder="+1,-2,h,A,v,4/5,3*. . ."id="textfield" rows="5" cols="30"></textarea></label>
@@ -42,7 +42,7 @@ const button2 = document.getElementById("button2");
 const text2 = document.getElementById("text2");
 const body = document.querySelector("body");
 const switcher = document.getElementById("switch");
-const switcher = document.getElementById("switch2");
+const switcher2 = document.getElementById("switch2");
 var visited = localStorage.getItem("visitTimes");
 function visit() {
     localStorage.setItem("visitTimes", ++visited);
@@ -56,6 +56,8 @@ switcher.addEventListener("change", function() {
 function arvuta() {
     var str = textfield.value;
     var regex = switcher.checked ? /[^x\d0-5]/g : /[^0-5]/g;
+    // add support for alphabetical grading system (A-F)
+    // WRITE IT HERE
     var str2 = str.replace(/^\d+\,\d+\,/g, "").replace(regex, '');
     if (str2.includes("x")) {
         str2 = str2.replace(/x/g, "1");
