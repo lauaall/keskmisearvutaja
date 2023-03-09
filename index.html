@@ -56,8 +56,7 @@ switcher.addEventListener("change", function() {
 function arvuta() {
     var str = textfield.value;
     var regex = switcher.checked ? /[^x\d0-5]/g : /[^0-5]/g;
-    // add support for alphabetical grading system (A-F)
-    // WRITE IT HERE
+    // TODO: support for alphabetical grading system (A-F)
     var str2 = str.replace(/^\d+\,\d+\,/g, "").replace(regex, '');
     if (str2.includes("x")) {
         str2 = str2.replace(/x/g, "1");
